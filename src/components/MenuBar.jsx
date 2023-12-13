@@ -5,7 +5,7 @@ export default function MenuBar() {
     <div className="fixed top-0 left-0 p-1 w-full h-auto z- bg-[rgba(31,41,55,0.4)] border-b border-gray-700 flex justify-between">
         <div className="flex gap-x-2">
             <span className="text-white text-sm font-medium p-1 hover:bg-slate-500 cursor-pointer rounded-lg">Applications</span>
-            <div className="absolute border border-white p-3 top-12 left-4 rounded-xl w-[500px] h-[560px] bg-gray-600 grid grid-cols-[2fr_3fr] gap-x-1">
+            <div className="hidden absolute border border-white p-3 top-12 left-4 rounded-xl w-[500px] h-[560px] bg-gray-600 grid grid-cols-[2fr_3fr] gap-x-1">
                 <div className="">
                     <p className="text-md text-blue-200 px-2 my-3 font-medium">Hello Maung!</p>
                     <button className="w-full text-left text-sm text-white hover:text-gray-900 font-medium p-2 my-1 rounded-lg hover:bg-gray-300">01 - Information Gathering</button>
@@ -14,11 +14,13 @@ export default function MenuBar() {
                     <button className="w-full text-left text-sm text-white hover:text-gray-900 font-medium p-2 my-1 rounded-lg hover:bg-gray-300">04 - Password Attack</button>
                     <button className="w-full text-left text-sm text-white hover:text-gray-900 font-medium p-2 my-1 rounded-lg hover:bg-gray-300">05 - Reporting</button>
                 </div>
-                <div className="">
+                <div className="relative">
                     <p className="text-xl text-blue-200 px-2 my-3 font-medium">Recent</p>
                     <button className="w-full text-left text-md text-gray-100 hover:text-gray-900 font-medium p-2 my-1 rounded-lg hover:bg-gray-300">Terminal</button>
                     <button className="w-full text-left text-md text-gray-100 hover:text-gray-900 font-medium p-2 my-1 rounded-lg hover:bg-gray-300">Files</button>
                     <button className="w-full text-left text-md text-gray-100 hover:text-gray-900 font-medium p-2 my-1 rounded-lg hover:bg-gray-300">Cherry</button>
+
+                    <button className="absolute bottom-0 right-0 font-bold text-pink-500">M</button>
                 </div>
             </div>
         </div>
