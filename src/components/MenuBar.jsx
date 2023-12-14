@@ -1,9 +1,10 @@
 import React from 'react'
+import { FaPowerOff } from 'react-icons/fa'
 
 export default function MenuBar() {
   return (
     <div className="fixed top-0 left-0 p-1 w-full h-auto z- bg-[rgba(31,41,55,0.4)] border-b border-gray-700 flex justify-between">
-        <div className="flex gap-x-2">
+        <div className="flex items-center gap-x-2">
             <span className="text-white text-sm font-medium p-1 hover:bg-slate-500 cursor-pointer rounded-lg">Applications</span>
             <div className=" hidden absolute border border-white p-3 top-12 left-4 rounded-xl w-[500px] h-[560px] bg-[rgb(75,85,99,0.3)] grid grid-cols-[2fr_3fr] gap-x-1">
                 <div className="">
@@ -29,8 +30,10 @@ export default function MenuBar() {
             <span className="text-white text-sm font-medium p-1">Dec 13 11:11</span>
         </div>
 
-        <div className="flex gap-x-3">
-            <span className="text-white text-sm font-medium p-1">M</span>
+        <div className="flex items-center gap-x-3">
+            <span className="text-white text-sm font-medium p-1">
+                <FaPowerOff />
+            </span>
         </div>
     </div>
   )
