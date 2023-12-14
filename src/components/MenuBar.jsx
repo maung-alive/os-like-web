@@ -1,15 +1,23 @@
 import classNames from 'classnames';
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { FaPowerOff } from 'react-icons/fa'
+import { RunningApps } from '../App';
 
 export default function MenuBar() {
 
     let [ showMenuBar, setShowMenuBar ] = useState(false);
-
+    const current = new Date();
+    const date = `${current.getDate()}-${current.getMonth()+1}-${current.getFullYear()}`;
+    const [processes, setProcesses] = useContext(RunningApps)
+  
     return (
-        <div className="fixed top-0 left-0 p-1 w-full h-auto z- bg-[rgba(31,41,55,0.4)] border-b border-gray-700 flex justify-between">
+        <div className="fixed top-0 left-0 p-1 w-full h-auto bg-[rgba(31,41,55,0.4)] border-b border-gray-700 flex justify-between">
             <div className="flex items-center gap-x-2">
                 <button onClick={(e) => setShowMenuBar(!showMenuBar) } className="text-white text-sm font-medium p-1 hover:bg-slate-500 cursor-pointer rounded-lg">Applications</button>
+                {processes.map((process, key) => (
+                    <button key={key} className="text-white text-sm font-medium p-1 hover:bg-slate-500 cursor-pointer rounded-lg">{process.name}</button> 
+                ))}
+
                 <div className={classNames({
                     "absolute z-10 border border-white p-3 top-12 left-4 rounded-xl w-[500px] h-[560px] bg-[rgb(75,85,99,0.3)] grid grid-cols-[2fr_3fr] gap-x-1": true,
                     "duration-500": true,
@@ -36,10 +44,11 @@ export default function MenuBar() {
             </div>
 
             <div className="flex gap-x-3">
-                <span className="text-white text-sm font-medium p-1">Dec 13 11:11</span>
+    
             </div>
 
             <div className="flex items-center gap-x-3">
+                <span className="text-white text-sm font-medium p-1">{date}</span>
                 <span className="text-white text-sm font-medium p-1">
                     <FaPowerOff />
                 </span>

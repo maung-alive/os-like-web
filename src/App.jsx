@@ -1,20 +1,26 @@
 
-import React from 'react'
+import React, { createContext, useState } from 'react'
 import Screen from './components/Screen'
 import Dock from './components/Dock'
 import MenuBar from './components/MenuBar'
 import Widgets from './components/Widgets'
-import WindowLayout from './components/Layout/WindowLayout'
+import FileExplorer from './components/Windows/FileExplorer'
+
+export const RunningApps = createContext();
 
 export default function App() {
+
+  let [ processes, setProcesses ] = useState([]);
+
   return (
-    <Screen>
-      <MenuBar />
+    <RunningApps.Provider value={[processes, setProcesses]}>
+      <Screen>
+        <MenuBar />
 
-      <WindowLayout />
-      <Widgets />
+        <Widgets />
 
-      <Dock />
-    </Screen>
+        <Dock />
+      </Screen>
+    </RunningApps.Provider>
   )
 }

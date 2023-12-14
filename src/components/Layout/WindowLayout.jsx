@@ -1,28 +1,43 @@
-import React from 'react'
+import classNames from 'classnames';
+import React, { useContext, useState } from 'react'
 import Draggable from 'react-draggable';
+import { RunningApps } from '../../App';
 
-export default function WindowLayout({ windowTitle, children }) {
+export default function WindowLayout({ children, id, windowTitle }) {
+
+  let [ processes, setProcesses ] = useContext(RunningApps);
+  let [ maximum, setMaximum ] = useState(false);
+
+  let killProcess = () => {
+    setProcesses(processes.filter(i => i.id != id));
+  }
 
   return (
-    <Draggable>
-      <div className="w-[750px] h-[460px] rounded-xl bg-slate-200 absolute top-32 left-10">
-          
-          <div className="absolute top-0 right-0 bg-white w-full grid grid-cols-3">
-            <div className="flex p-2 gap-x-3">
-                <div className="bg-green-500 p-2 rounded-full"></div>
-                <div className="bg-yellow-500 p-2 rounded-full"></div>
-                <button onClick={() => alert(0)} className="bg-red-500 p-2 rounded-full"></button>
+      <Draggable>
+        <div className={classNames({
+          "bg-slate-200 overflow-hidden": true,
+          "w-[750px] h-[460px] rounded-xl absolute top-32 left-10": !maximum,
+          "fixed top-9 left-0 w-full h-full": maximum
+        })}>
+            
+            <div className="mb-3 absolute top-0 right-0 bg-white w-full grid grid-cols-3">
+              <div className="flex p-2 gap-x-3">
+                  <button title="Doesnt work" className="bg-yellow-500 p-2 rounded-full"></button>
+                  <button onClick={() => setMaximum(!maximum)} title="Maxium" className="bg-green-500 p-2 rounded-full"></button>
+                  <button onClick={killProcess} title="Close" className="bg-red-500 p-2 rounded-full"></button>
+              </div>
+
+              <div className="text-black text-center font-medium"></div>
+
+              <div className="text-black text-right font-medium pr-3">{windowTitle}</div>
+
             </div>
 
-            <div className="text-black text-center font-medium"></div>
+            <div className="h-full mt-2 overflow-y-auto">
+              {children}
+            </div>
 
-            <div className="text-black text-right font-medium pr-3">{windowTitle}</div>
-
-          </div>
-
-          {children}
-
-      </div>
-    </Draggable>
+        </div>
+      </Draggable>
   )
 }
