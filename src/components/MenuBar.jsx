@@ -12,7 +12,9 @@ export default function MenuBar() {
                 <button onClick={(e) => setShowMenuBar(!showMenuBar) } className="text-white text-sm font-medium p-1 hover:bg-slate-500 cursor-pointer rounded-lg">Applications</button>
                 <div className={classNames({
                     "absolute z-10 border border-white p-3 top-12 left-4 rounded-xl w-[500px] h-[560px] bg-[rgb(75,85,99,0.3)] grid grid-cols-[2fr_3fr] gap-x-1": true,
-                    "hidden": showMenuBar
+                    "duration-500": true,
+                    "-translate-x-[110%]": !showMenuBar,
+                    "translate-x-0": showMenuBar
                 })}>
                     <div className="">
                         <p className="text-md text-blue-200 px-2 my-3 font-medium">Hello Maung!</p>
