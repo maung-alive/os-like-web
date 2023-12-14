@@ -13,11 +13,11 @@ export default function WindowLayout({ children, id, windowTitle }) {
   }
 
   return (
-      <Draggable>
+      <Draggable disabled={maximum}>
         <div className={classNames({
           "bg-slate-200 overflow-hidden": true,
           "w-[750px] h-[460px] rounded-xl absolute top-32 left-10": !maximum,
-          "fixed top-9 left-0 w-full h-full": maximum
+          "fixed top-9 left-0 w-full h-full -translate-x-1/2 -translate-y-1/2": maximum
         })}>
             
             <div className="mb-3 absolute top-0 right-0 bg-white w-full grid grid-cols-3">
