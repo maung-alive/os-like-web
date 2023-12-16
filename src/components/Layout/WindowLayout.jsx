@@ -39,7 +39,7 @@ export default function WindowLayout({ children, id, windowTitle, width, height 
 
             </div>
 
-            <div className="h-full mt-2 overflow-y-auto">
+            <div className="h-full mt-2 overflow-hidden">
               {children}
             </div>
 

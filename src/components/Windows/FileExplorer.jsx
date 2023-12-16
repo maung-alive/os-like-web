@@ -1,12 +1,12 @@
 import React from 'react'
 import WindowLayout from '../Layout/WindowLayout'
-import { FaBox, FaCamera, FaCameraRetro, FaDesktop, FaDownload, FaNetworkWired, FaSearch, FaSpaceShuttle, FaUser, FaUsers } from 'react-icons/fa'
+import { FaBox, FaCamera, FaCameraRetro, FaDesktop, FaDownload, FaFile, FaFileAlt, FaFolder, FaGreaterThan, FaNetworkWired, FaSearch, FaSpaceShuttle, FaTextHeight, FaUser, FaUsers, FaWpexplorer } from 'react-icons/fa'
 
 export default function FileExplorer({id}) {
   return (
     <WindowLayout id={id} windowTitle={'Files'} width={750} height={460} >
 
-        <div className="shadow-sm mt-6 bg-gray-100 border-b px-2 flex items-center justify-between">
+        <div className="w-full shadow-sm mt-6 bg-gray-100 border-b px-2 flex items-center justify-between">
             <div className="flex justify-center gap-x-3 py-3">
                 <FaUser className="text-2xl text-teal-800" />
                 <span className="text-xl font-medium text-teal-800">Maung</span>
@@ -45,8 +45,78 @@ export default function FileExplorer({id}) {
 
             </div>
 
-            <div className="h-full px-2">
-                Hello
+            <div className="h-full overflow-y-auto">
+                <div className="py-2 bg-white">
+                    <p className="text-md font-medium text-blue-600 p-2 rounded-md flex items-center gap-x-2">
+                        <FaFolder className='cursor-pointer' /><FaGreaterThan />
+                    </p>
+                </div>
+
+                <div className="h-full grid grid-cols-7 grid-rows-6 p-2">
+
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">boot</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">bin</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">dev</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">etc</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">lib</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">home</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">mnt</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">media</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">opt</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">root</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">tmp</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">sbin</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">usr</p>
+                    </div>
+                    <div className="">
+                        <FaFolder className="text-4xl text-blue-600 cursor-pointer" />
+                        <p className="text-md">var</p>
+                    </div>
+                    <div className="">
+                        <FaFileAlt className="text-4xl text-gray-600 cursor-pointer" />
+                        <p className="text-md">readm<br />e.txt</p>
+                    </div>
+
+                </div>
+
             </div>
         </div>
 
