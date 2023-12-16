@@ -3,7 +3,7 @@ import React, { createRef, useContext, useRef, useState } from 'react'
 import Draggable from 'react-draggable';
 import { RunningApps } from '../../App';
 
-export default function WindowLayout({ children, id, windowTitle }) {
+export default function WindowLayout({ children, id, windowTitle, width, height }) {
 
   let [ processes, setProcesses ] = useContext(RunningApps);
   let [ maximum, setMaximum ] = useState(false);
@@ -22,14 +22,14 @@ export default function WindowLayout({ children, id, windowTitle }) {
       <Draggable disabled={maximum} nodeRef={windowRef}>
         <div className={classNames({
           "bg-slate-200 overflow-hidden": true,
-          "w-[750px] h-[460px] rounded-xl absolute top-32 left-10": !maximum,
+          "rounded-xl shadow-2xl absolute top-32 left-10": !maximum,
           "fixed top-9 left-0 w-full h-full": maximum
-        })} ref={windowRef}>
+        })} ref={windowRef} style={{ width: width, height: height }}>
             
             <div className="mb-3 absolute top-0 right-0 bg-white w-full grid grid-cols-3">
               <div className="flex p-2 gap-x-3">
                   <button title="Doesnt work" className="bg-yellow-500 p-2 rounded-full"></button>
-                  <button onClick={(e) => makeMaximum(e)} title="Maxium" className="bg-green-500 p-2 rounded-full"></button>
+                  <button onClick={makeMaximum} title="Maxium" className="bg-green-500 p-2 rounded-full"></button>
                   <button onClick={killProcess} title="Close" className="bg-red-500 p-2 rounded-full"></button>
               </div>
 
