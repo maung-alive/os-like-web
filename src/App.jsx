@@ -19,8 +19,6 @@ export default function App() {
 
         <Widgets />
 
-        <FileExplorer />
-
         <Dock />
       </Screen>
     </RunningApps.Provider>
