@@ -23,8 +23,8 @@ export default function WindowLayout({ children, id, windowTitle, width, height 
         <div className={classNames({
           "bg-slate-200 overflow-hidden": true,
           "rounded-xl shadow-2xl absolute top-32 left-10": !maximum,
-          "fixed top-9 left-0 w-full h-full": maximum
-        })} ref={windowRef} style={{ width: width, height: height }}>
+          "fixed top-9 left-0": maximum
+        })} ref={windowRef} style={{ width: maximum ? '100vw' : width, height: maximum ? '100vh' : height }}>
             
             <div className="mb-3 absolute top-0 right-0 bg-white w-full grid grid-cols-3">
               <div className="flex p-2 gap-x-3">
