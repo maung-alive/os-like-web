@@ -8,6 +8,8 @@ export default {
     extend: {},
     fontFamily: {
       ibm: ['IBM Plex Mono', 'Consolas', 'Menlo', 'Monaco', 'Courier New'],
+      ubuntu: ['Ubuntu', 'sans-serif'],
+      orbitron: ['Orbitron', 'cursive', 'sans-serif'],
     }
   },
   plugins: [],
