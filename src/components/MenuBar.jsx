@@ -19,7 +19,7 @@ export default function MenuBar() {
                 ))}
 
                 <div className={classNames({
-                    "absolute z-10 shadow-lg p-3 top-12 left-4 rounded-xl w-[500px] h-[560px] bg-[rgba(255,255,255,0.3)] grid grid-cols-[2fr_3fr] gap-x-1": true,
+                    "absolute z-10 shadow-lg p-3 top-12 left-4 rounded-xl w-[90vw] max-w-[500px] h-[560px] bg-[rgba(255,255,255,0.3)] grid grid-cols-[2fr_3fr] gap-x-1": true,
                     "duration-500": true,
                     "-translate-x-[110%]": !showMenuBar,
                     "translate-x-0": showMenuBar

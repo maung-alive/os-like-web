@@ -5,8 +5,6 @@ import Dock from './components/Dock'
 import MenuBar from './components/MenuBar'
 import Widgets from './components/Widgets'
 
-import Terminal from './components/Windows/Terminal'
-
 export const RunningApps = createContext();
 
 export default function App() {
