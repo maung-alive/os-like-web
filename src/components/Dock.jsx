@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { FaAddressBook, FaBeer, FaCalculator, FaFacebook, FaFileArchive, FaGithub, FaHome, FaInternetExplorer, FaMailBulk, FaMedium, FaPlaystation, FaSearch, FaSearchDollar, FaSearchengin, FaTerminal, FaVideo, FaWpexplorer } from 'react-icons/fa'
 import { RunningApps } from '../App'
 import FileExplorer from './Windows/FileExplorer';
+import Terminal from './Windows/Terminal';
 
 export default function Dock() {
 
@@ -24,7 +25,7 @@ export default function Dock() {
           <FaHome className="text-2xl text-black" />
         </button>
         <div className="border-r h-full"></div>
-        <button className="active:translate-y-0 bg-black p-2 rounded-lg duration-150 hover:-translate-y-3" title="Terminal">
+        <button onClick={() => addProcess(Date.now(),"Terminal", <Terminal key={Date.now()} id={Date.now()} />, false)} className="active:translate-y-0 bg-black p-2 rounded-lg duration-150 hover:-translate-y-3" title="Terminal">
           <FaTerminal className="text-2xl text-white" />
         </button>
         <button className="active:translate-y-0 bg-cyan-700 p-2 rounded-lg duration-150 hover:-translate-y-3" title="Internet">

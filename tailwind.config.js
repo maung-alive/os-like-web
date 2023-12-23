@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {},
+    fontFamily: {
+      ibm: ['IBM Plex Mono', 'Consolas', 'Menlo', 'Monaco', 'Courier New'],
+    }
   },
   plugins: [],
 }

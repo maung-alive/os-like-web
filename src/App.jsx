@@ -4,7 +4,8 @@ import Screen from './components/Screen'
 import Dock from './components/Dock'
 import MenuBar from './components/MenuBar'
 import Widgets from './components/Widgets'
-import FileExplorer from './components/Windows/FileExplorer'
+
+import Terminal from './components/Windows/Terminal'
 
 export const RunningApps = createContext();
 
