@@ -3,7 +3,7 @@ import React, { useContext, useState } from 'react'
 import { FaCog, FaCompass, FaPowerOff, FaTerminal, FaUser } from 'react-icons/fa'
 import { RunningApps } from '../App';
 
-export default function MenuBar() {
+export default function MenuBar({ shutdown, setShuttingDown }) {
 
     let [ showMenuBar, setShowMenuBar ] = useState(false);
     const current = new Date();
@@ -11,8 +11,7 @@ export default function MenuBar() {
     const [processes, setProcesses] = useContext(RunningApps);
 
     const handleShutDown = () => {
-        window.open("about:blank", "_self");
-        window.close();
+        shutdown(setShuttingDown);
     }
   
     return (
@@ -42,7 +41,7 @@ export default function MenuBar() {
                         <button className="w-full text-left text-md text-gray-800 hover:text-gray-900 font-medium p-2 my-1 rounded-lg hover:bg-gray-300">Files</button>
                         <button className="w-full text-left text-md text-gray-800 hover:text-gray-900 font-medium p-2 my-1 rounded-lg hover:bg-gray-300">Cherry</button>
 
-                        <button className="absolute bottom-0 right-0 font-bold bg-[#f00] p-2 rounded-full text-white"><FaPowerOff /></button>
+                        <button className="absolute bottom-0 right-0 font-bold bg-[#f00] p-2 rounded-full text-white" onClick={handleShutDown}><FaPowerOff /></button>
                     </div>
                 </div>
             </div>
