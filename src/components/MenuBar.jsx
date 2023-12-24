@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import React, { useContext, useState } from 'react'
-import { FaCog, FaCompass, FaFileExport, FaPowerOff, FaTerminal, FaUser } from 'react-icons/fa'
+import { FaCog, FaCompass, FaPowerOff, FaTerminal, FaUser } from 'react-icons/fa'
 import { RunningApps } from '../App';
 
 export default function MenuBar() {
@@ -53,9 +53,9 @@ export default function MenuBar() {
 
             <div className="flex items-center gap-x-3">
                 <span className="text-white text-sm font-medium p-1">{date}</span>
-                <span className="text-white text-sm font-medium p-1">
+                <button onClick={handleShutDown} className="text-white text-sm font-medium p-1">
                     <FaPowerOff />
-                </span>
+                </button>
             </div>
         </div>
     )
