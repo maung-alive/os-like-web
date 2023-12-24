@@ -8,7 +8,12 @@ export default function MenuBar() {
     let [ showMenuBar, setShowMenuBar ] = useState(false);
     const current = new Date();
     const date = `${current.getDate()}-${current.getMonth()+1}-${current.getFullYear()}`;
-    const [processes, setProcesses] = useContext(RunningApps)
+    const [processes, setProcesses] = useContext(RunningApps);
+
+    const handleShutDown = () => {
+        window.open("about:blank", "_self");
+        window.close();
+    }
   
     return (
         <div className="fixed top-0 left-0 p-1 w-full h-auto bg-[rgba(31,41,55,0.4)] border-b border-gray-700 flex justify-between">
