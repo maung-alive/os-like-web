@@ -27,7 +27,7 @@ export default function App() {
 
   return (
     <RunningApps.Provider value={[processes, setProcesses]}>
-      <Screen>
+      <Screen shutdown={shutdown_func} setShuttingDown={setShuttingDown}>
         <MenuBar shutdown={shutdown_func} setShuttingDown={setShuttingDown} />
 
         <Widgets />

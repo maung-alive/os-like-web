@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaCopy, FaCut, FaInfoCircle, FaPaste, FaPowerOff, FaSort, FaSync, FaTh } from 'react-icons/fa'
 
-export default function ContextMenu({ contextMenuRef, top, left }) {
+export default function ContextMenu({ shutdown, setShuttingDown, contextMenuRef, top, left }) {
   return (
     <div
         ref={contextMenuRef}
@@ -30,7 +30,7 @@ export default function ContextMenu({ contextMenuRef, top, left }) {
             <button className="flex items-center gap-x-2 text-black text-md font-ubuntu w-full text-left hover:bg-gray-300 hover:text-gray-500 px-2 py-1 my-1 rounded">
                 <FaInfoCircle /> About PC
             </button>
-            <button className="flex items-center gap-x-2 text-black text-md font-ubuntu w-full text-left hover:bg-gray-300 hover:text-gray-500 px-2 py-1 my-1 rounded">
+            <button className="flex items-center gap-x-2 text-black text-md font-ubuntu w-full text-left hover:bg-gray-300 hover:text-gray-500 px-2 py-1 my-1 rounded" onClick={() => shutdown(setShuttingDown)}>
                 <FaPowerOff /> Shutdown
             </button>
         </div>

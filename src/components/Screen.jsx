@@ -2,7 +2,7 @@ import React, { useContext, useRef, useState } from 'react'
 import { RunningApps } from '../App'
 import ContextMenu from './ContextMenu';
 
-export default function Screen({ children }) {
+export default function Screen({ children, shutdown, setShuttingDown }) {
 
   let [ processes, setProcesses ] = useContext(RunningApps);
   
@@ -41,7 +41,16 @@ export default function Screen({ children }) {
     >
         {children}
 
-        {contextMenu.show && <ContextMenu contextMenuRef={contextMenuRef} top={contextMenu.top} left={contextMenu.left} />}
+        {
+          contextMenu.show &&
+          <ContextMenu
+            shutdown={shutdown}
+            setShuttingDown={setShuttingDown}
+            contextMenuRef={contextMenuRef}
+            top={contextMenu.top}
+            left={contextMenu.left}
+          />
+        }
 
         {processes.filter( i => i.minimized == false ).map(
           process => process.component
