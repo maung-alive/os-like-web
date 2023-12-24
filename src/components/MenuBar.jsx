@@ -16,7 +16,7 @@ export default function MenuBar() {
     }
   
     return (
-        <div className="fixed top-0 left-0 p-1 w-full h-auto bg-[rgba(31,41,55,0.4)] border-b border-gray-700 flex justify-between">
+        <div className="font-ubuntu fixed top-0 left-0 p-1 w-full h-auto bg-[rgba(31,41,55,0.4)] border-b border-gray-700 flex justify-between">
             <div className="flex items-center gap-x-2">
                 <button onClick={(e) => setShowMenuBar(!showMenuBar) } className="text-white text-sm font-medium p-1 hover:bg-slate-500 cursor-pointer rounded-lg active:scale-95">Applications</button>
                 {processes.map((process, key) => (

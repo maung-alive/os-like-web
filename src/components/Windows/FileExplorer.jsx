@@ -35,7 +35,7 @@ const Folder = ({ setView, path=[], files }) => {
             <div className="h-full grid grid-cols-7 grid-rows-6 p-2">
                 {Array.isArray(files) ? files.map( i => {
                     return (
-                        <div className="" key={i.name} onClick={() => setView(<Folder setView={setView} path={['root', 'home', 'Desktop']} files={{}} />)}>
+                        <div className="" key={i.name} onClick={() => setView(<Folder setView={setView} path={['home', 'Desktop']} files={{}} />)}>
                             {i.icon}
                             <p className="text-md">{i.name}</p>
                         </div>
@@ -131,7 +131,7 @@ export default function FileExplorer({id}) {
     return (
         <WindowLayout id={id} windowTitle={'Files'} width={750} height={460} >
 
-            <div className="w-full shadow-sm mt-6 bg-gray-100 border-b px-2 flex items-center justify-between">
+            <div className="font-ubuntu w-full shadow-sm mt-6 bg-gray-100 border-b px-2 flex items-center justify-between">
                 <div className="flex justify-center gap-x-3 py-3">
                     <FaUser className="text-2xl text-teal-800" />
                     <span className="text-xl font-medium text-teal-800">Maung</span>
