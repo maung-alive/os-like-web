@@ -3,6 +3,8 @@ import Draggable from 'react-draggable';
 import { FaPause, FaPlay, FaStepBackward, FaStepForward } from 'react-icons/fa';
 import useSound from 'use-sound';
 
+import AboutYou from '../assets/aboutyou.mp3';
+
 function AnimatedCPU() {
   let [ height, setHeight ] = useState([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,]);
 
@@ -23,7 +25,7 @@ function AnimatedCPU() {
 
 const MusicPlayer = () => {
 
-  const [play, { pause }] = useSound('/song.mp3');
+  const [play, { pause }] = useSound(AboutYou);
   let [ playing, setPlaying ] = useState(false);
 
   return (
@@ -35,7 +37,7 @@ const MusicPlayer = () => {
           <p className="text-md text-gray-800">The 1975</p>
         </div>
         <div className="relative z-10 bg-white scale-x-110 scale-y-110 pl-24 py-3 shadow-xl flex items-center justify-around rounded-md">
-          <span className="text-gray-800 text-2xl bg-white rounded-full p-2">
+          <span className="text-gray-700 cursor-not-allowed text-2xl bg-white rounded-full p-2">
             <FaStepBackward />
           </span>
           <span className="text-gray-800 text-2xl bg-white rounded-full p-2" onClick={() => { playing ? pause() : play(); setPlaying(!playing) }}>
@@ -45,7 +47,7 @@ const MusicPlayer = () => {
               : <FaPlay />
             }
           </span>
-          <span className="text-gray-800 text-2xl bg-white rounded-full p-2">
+          <span className="text-gray-700 cursor-not-allowed text-2xl bg-white rounded-full p-2">
             <FaStepForward />
           </span>
         </div>
