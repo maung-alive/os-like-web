@@ -1,7 +1,7 @@
 import React, { createRef, useEffect, useState } from 'react'
 import WindowLayout from '../Layout/WindowLayout'
 
-function readCommand(order, setPrompt) {
+function readCommand(order, setPrompt, setHistory) {
     let [ command, args ] = order.split(' ');
     switch(command){
         case "help":
@@ -100,6 +100,29 @@ function readCommand(order, setPrompt) {
             return <>
                 I didn't count!
             </>
+        case "cat":
+            switch(args){
+                case "readme.txt":
+                    return <>
+                        hello guys!<br/>
+                        this is just a readme file<br />
+                        this app is just for fun<br />
+                        i got this idea from someone i can't remember<br />
+                        i think i found this from fb<br />
+                        however i make this app a little different<br />
+                        for example i make this app look like a modern os<br />
+                        i think it's a little bit more modern<br />
+                        this app also have a terminal you can also use wins or linux commands<br />
+                        i hope you enjoy it!<br /><br />
+                        PS:<br/>
+                        You can't use some commands right now!<br/>
+                    </>
+                default:
+                    return <>Cannot find {args}</>    
+            }
+        case "clear":
+        case "cls":
+            break;
         default:
             return <><span className="text-yellow-400">[?]</span> command not found</>
     }
@@ -112,15 +135,13 @@ export default function Terminal({ id }) {
     let commandRef = createRef();
 
     const enterKeyPressed = () => {
-        let nextHistory = <>{prompt} {currentLine}<br/>{readCommand(currentLine, setPrompt)}</>
+        let nextHistory = <>{prompt} {currentLine}<br/>{readCommand(currentLine, setPrompt, setHistory)}</>
         setHistory([...history, nextHistory]);
         setCurrentLine('');
     }
 
     const DelKeyPressed = () => {
-        console.log(currentLine === prompt);
         if (currentLine.toString() !== prompt.toString()) {
-            console.log(currentLine);
             setCurrentLine(currentLine.slice(0, -1));
         }
     }
