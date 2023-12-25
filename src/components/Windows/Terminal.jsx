@@ -16,7 +16,7 @@ function readCommand(order, setPrompt, setHistory) {
                 <span className="ml-10"></span>cd<br/>
                 <span className="ml-10"></span>ping <br />
                 =================================================<br/>
-                Type "commands" for advlidated commands...
+                Type "commands" for avaliable commands...
             </>
         case "commands":
             return <>
