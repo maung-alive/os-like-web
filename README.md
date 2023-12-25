@@ -3,7 +3,7 @@
 This web app provides a minimal os to feel like working in a os.
 Currently, There are only very few app are available.
 
-***others function and app may come in future!***
+***others function and app may come in future or not!***
 
 ### Programming
 - React
